@@ -56,7 +56,7 @@ std::string	Bureaucrat::GradeTooHighException() const {
 	return "Bureaucrat grade too high";
 }
 
-void	Bureaucrat::signForm(Form &form) const {
+void	Bureaucrat::signForm(AForm &form) const {
 	try {
 		form.beSigned(*this);
 		std::cout << _name << " signs " << form.get_name() << std::endl;
@@ -65,6 +65,10 @@ void	Bureaucrat::signForm(Form &form) const {
 		std::cout	<< _name << " cannot sign " << form.get_name() << " because "
 					<< e << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form) const {
+		form.execute(*this);
 }
 
 std::string	Bureaucrat::get_name() const {
@@ -87,7 +91,7 @@ void	Bureaucrat::set_grade(int i) {
 		throw GradeTooHighException();
 }
 
-std::ostream&	operator<<(std::ostream &o, const Bureaucrat& ptr) {
+std::ostream	&operator<<(std::ostream &o, const Bureaucrat &ptr) {
 	o	<< ptr.get_name() << ", bureaucrat of grade "
 		<< ptr.get_grade() << std::endl;
 	return o;

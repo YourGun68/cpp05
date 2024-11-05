@@ -11,50 +11,63 @@
 /* ************************************************************************** */
 
 #include "bureaucrat.hpp"
-#include "form.hpp"
+#include "aform.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-void	sectionTitle(const std::string& title) {
-	std::cout	<< std::endl
-				<< "*** " << title << " ***"
-				<< std::endl << std::endl;
-}
+int main(void)
+{
+	std::cout << "-------------------------------------------" << std::endl;
+	{
+		std::cout << std::endl;
 
-void	printError(std::string e) {
-	std::cout << "Error: " << e << std::endl;
-}
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		Bureaucrat *a = new Bureaucrat("Emperor", 1);
+		PresidentialPardonForm *b = new PresidentialPardonForm("this other dude");
+		PresidentialPardonForm *c = new PresidentialPardonForm(*b);
+		std::cout << std::endl;
 
-int	main() {
-	Bureaucrat	burro("burro", 42);
-	std::cout << burro;
+		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << b;
+		std::cout << c;
+		b->beSigned(*a);
+		a->signForm(*c);
+		b->execute(*a);
+		a->executeForm(*c);
+		std::cout << std::endl;
 
-	sectionTitle("constructor");
-	try {
-		Form	formaccio("formaccio", 1000, 1);
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		delete a;
+		delete b;
+		delete c;
+		std::cout << std::endl;
 	}
-	catch (std::string e) {
-		printError(e);
-	}
-	try {
-		Form	formaccio("formaccio", 42, 0);
-	}
-	catch (std::string e) {
-		printError(e);
-	}
-	try {
-		Form	formino("formino", 42, 42);
-		Form	formone("formone", 1, 1);
+	std::cout << "-------------------------------------------" << std::endl;
+	{
+		std::cout << std::endl;
 
-		std::cout << std::endl << formino << formone;
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		Bureaucrat *a = new Bureaucrat("Emperor", 1);
+		RobotomyRequestForm *b = new RobotomyRequestForm("Bender");
+		ShrubberyCreationForm *c = new ShrubberyCreationForm("christmas");
+		std::cout << std::endl;
 
-		sectionTitle("sign twice");
-		burro.signForm(formino);
-		std::cout << formino;
-		burro.signForm(formino);
+		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << b;
+		std::cout << c;
+		b->beSigned(*a);
+		a->signForm(*c);
+		for (int i= 0; i < 4; i++)
+			b->execute(*a);
+		c->execute(*a);
+		std::cout << std::endl;
 
-		sectionTitle("grade too low");
-		burro.signForm(formone);
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		delete a;
+		delete b;
+		delete c;
+		std::cout << std::endl;
 	}
-	catch (std::string e) {
-		printError(e);
-	}
+	return (0);
 }

@@ -2,11 +2,11 @@
 #pragma once
 
 #include <iostream>
-# include <stdexcept>
-# include <string>
-# include "form.hpp"
+#include <stdexcept>
+#include <string>
+#include "aform.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -25,7 +25,8 @@ public:
 	std::string	GradeTooLowException() const;
 	void		Increment(int i);
 	void		Decrement(int i);
-	void		signForm(Form &form) const ;
+	void		signForm(AForm &form) const ;
+	void		executeForm(AForm const &form) const;
 
 	std::string	get_name() const;
 	int			get_grade() const;
