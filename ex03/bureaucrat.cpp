@@ -6,7 +6,7 @@
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:00:27 by jpeter            #+#    #+#             */
-/*   Updated: 2024/11/06 10:43:51 by jpeter           ###   ########.fr       */
+/*   Updated: 2024/11/06 11:31:07 by jpeter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &ptr): _name(ptr._name), _grade(ptr._gra
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat&	Bureaucrat::operator =(const Bureaucrat &ptr) {
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &ptr) {
 	if (this != &ptr)
 	{
 		set_name(ptr._name);

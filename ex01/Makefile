@@ -1,6 +1,6 @@
-NAME 		= bureaucrat
-CC 			= c++
-CFLAGS 		= -Wall -Wextra -Werror -std=c++98
+NAME 			= bureaucrat
+CXX 			= c++
+CXXFLAGS 		= -Wall -Wextra -Werror -std=c++98
 
 SRCS 		= $(shell find -name "*.cpp")
 OBJS 		= $(SRCS:.cpp=.o)
@@ -8,10 +8,10 @@ OBJS 		= $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

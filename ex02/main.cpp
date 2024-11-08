@@ -6,7 +6,7 @@
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:35:33 by jpeter            #+#    #+#             */
-/*   Updated: 2024/10/28 11:18:11 by jpeter           ###   ########.fr       */
+/*   Updated: 2024/11/06 10:44:23 by jpeter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,28 @@ int main(void)
 {
 	std::cout << "-------------------------------------------" << std::endl;
 	{
+		
 		std::cout << std::endl;
 
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-		Bureaucrat *a = new Bureaucrat("Emperor", 1);
-		PresidentialPardonForm *b = new PresidentialPardonForm("this other dude");
+		Bureaucrat *a = new Bureaucrat("Ganon", 1);
+		PresidentialPardonForm *b = new PresidentialPardonForm("Link");
 		PresidentialPardonForm *c = new PresidentialPardonForm(*b);
 		std::cout << std::endl;
-
 		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << a;
 		std::cout << b;
 		std::cout << c;
-		b->beSigned(*a);
-		a->signForm(*c);
-		b->execute(*a);
-		a->executeForm(*c);
+		try
+		{
+			a->signForm(*c);
+			a->executeForm(*c);
+			b->execute(*a);
+		}
+		catch(std::string e)
+		{
+			std::cout << e << std::endl;
+		}
 		std::cout << std::endl;
 
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
@@ -48,19 +55,27 @@ int main(void)
 		std::cout << std::endl;
 
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-		Bureaucrat *a = new Bureaucrat("Emperor", 1);
-		RobotomyRequestForm *b = new RobotomyRequestForm("Bender");
-		ShrubberyCreationForm *c = new ShrubberyCreationForm("christmas");
+		Bureaucrat *a = new Bureaucrat("Ganon", 1);
+		RobotomyRequestForm *b = new RobotomyRequestForm("Zelda");
+		ShrubberyCreationForm *c = new ShrubberyCreationForm("Linbeck");
 		std::cout << std::endl;
 
 		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << a;
 		std::cout << b;
 		std::cout << c;
-		b->beSigned(*a);
-		a->signForm(*c);
-		for (int i= 0; i < 4; i++)
-			b->execute(*a);
-		c->execute(*a);
+		try
+		{
+			b->beSigned(*a);
+			a->signForm(*c);
+			for (int i= 0; i < 4; i++)
+				b->execute(*a);
+			c->execute(*a);
+		}
+		catch(std::string e)
+		{
+			std::cout << e << std::endl; 
+		}
 		std::cout << std::endl;
 
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
