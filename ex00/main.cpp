@@ -20,24 +20,22 @@ void	sectionTitle(const std::string& title) {
 
 int	main() {
 	sectionTitle("constructor");
-
 	try {
-		Bureaucrat	pippo("pippo", 1);
+		Bureaucrat	pippo("2B", 1);
 		std::cout << pippo;
 	}
 	catch (std::string e) {
 		std::cout << "Error: " << e << std::endl;
 	}
-
 	try {
-		Bureaucrat	poppi("poppi", -42);
+		Bureaucrat	poppi("2B", -42);
 		std::cout << poppi;
 	}
 	catch (std::string e) {
 		std::cout << "Error: " << e << std::endl;
 	}
 	try {
-		Bureaucrat	poppi("poppi", 4242);
+		Bureaucrat	poppi("2B", 4242);
 		std::cout << poppi;
 	}
 	catch (std::string e) {
@@ -45,7 +43,7 @@ int	main() {
 	}
 	sectionTitle("increment");
 	try {
-		Bureaucrat	pippo("pippo", 12);
+		Bureaucrat	pippo("9S", 12);
 		std::cout << pippo;
 		pippo.Increment(10);
 		std::cout << pippo;
@@ -59,7 +57,7 @@ int	main() {
 	}
 	sectionTitle("decrement");
 	try {
-		Bureaucrat	pippo("pippo", 139);
+		Bureaucrat	pippo("A2", 139);
 		std::cout << pippo;
 		pippo.Decrement(10);
 		std::cout << pippo;

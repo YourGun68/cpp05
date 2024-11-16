@@ -6,7 +6,7 @@
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:35:33 by jpeter            #+#    #+#             */
-/*   Updated: 2024/10/28 11:18:11 by jpeter           ###   ########.fr       */
+/*   Updated: 2024/11/16 09:57:26 by jpeter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,29 @@ void	printError(std::string e) {
 }
 
 int	main() {
-	Bureaucrat	burro("burro", 42);
+	Bureaucrat	burro("Gerald", 42);
 	std::cout << burro;
 
 	sectionTitle("constructor");
 	try {
-		Form	formaccio("formaccio", 1000, 1);
+		Form	form("Jaskier", 1000, 1);
 	}
 	catch (std::string e) {
 		printError(e);
 	}
 	try {
-		Form	formaccio("formaccio", 42, 0);
-	}
-	catch (std::string e) {
-		printError(e);
-	}
-	try {
-		Form	formino("formino", 42, 42);
-		Form	formone("formone", 1, 1);
+		Form	formA("Yenefer", 42, 42);
+		Form	formB("Triss", 1, 1);
 
-		std::cout << std::endl << formino << formone;
+		std::cout << std::endl << formA << formB;
 
 		sectionTitle("sign twice");
-		burro.signForm(formino);
-		std::cout << formino;
-		burro.signForm(formino);
+		burro.signForm(formA);
+		std::cout << formA;
+		burro.signForm(formA);
 
 		sectionTitle("grade too low");
-		burro.signForm(formone);
+		burro.signForm(formB);
 	}
 	catch (std::string e) {
 		printError(e);

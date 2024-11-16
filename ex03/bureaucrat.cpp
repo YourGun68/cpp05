@@ -6,7 +6,7 @@
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:00:27 by jpeter            #+#    #+#             */
-/*   Updated: 2024/11/06 11:31:07 by jpeter           ###   ########.fr       */
+/*   Updated: 2024/11/16 10:09:10 by jpeter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,3 @@ std::ostream	&operator<<(std::ostream &o, const Bureaucrat *a) {
 	std::endl;
 	return (o);
 }
-
-// std::ostream	&operator<<(std::ostream &o, const Bureaucrat &ptr) {
-// 	o	<< ptr.get_name() << ", bureaucrat of grade "
-// 		<< ptr.get_grade() << std::endl;
-// 	return o;
-// }

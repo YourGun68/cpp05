@@ -10,7 +10,6 @@ private:
 	
 	RobotomyRequestForm(void);
 public:
-
 	RobotomyRequestForm(std::string target);
 	RobotomyRequestForm(RobotomyRequestForm &src);
 	~RobotomyRequestForm();

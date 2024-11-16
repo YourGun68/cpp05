@@ -6,13 +6,13 @@
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:25:49 by jpeter            #+#    #+#             */
-/*   Updated: 2024/10/28 11:17:50 by jpeter           ###   ########.fr       */
+/*   Updated: 2024/11/16 09:55:29 by jpeter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "form.hpp"
 
-Form::Form(): _name("Jacky"), _sign(false), _grade(150), _exec(0) {}
+Form::Form(): _name("Ciri"), _sign(false), _grade(150), _exec(0) {}
 
 Form::Form(std::string name, int i, int j): _name(name), _sign(false), _grade(i), _exec(j) {
 	if (i > 150)

@@ -10,7 +10,6 @@ private:
 	
 	PresidentialPardonForm(void);
 public:
-// Constructors
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(PresidentialPardonForm &src);
 	~PresidentialPardonForm();

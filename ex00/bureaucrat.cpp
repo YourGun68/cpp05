@@ -6,13 +6,13 @@
 /*   By: jpeter <jpeter@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:00:27 by jpeter            #+#    #+#             */
-/*   Updated: 2024/10/28 13:27:21 by jpeter           ###   ########.fr       */
+/*   Updated: 2024/11/16 09:52:33 by jpeter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): _name("Jack"), _grade(150) {}
+Bureaucrat::Bureaucrat(): _name("Eve"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string name, int i) {
 	set_name(name);
